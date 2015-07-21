@@ -1,3 +1,4 @@
+//add comment
 package gotogether.qihoo.com.myapplication;
 
 import android.app.Activity;
