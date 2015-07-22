@@ -15,6 +15,9 @@
                 android:layout_weight="1"
                 android:layout_gravity="center_horizontal"
                 android:text="温度"
+
+                style="@style/textStyle"
+
                 android:padding="25px"/>
 
             <TextView
