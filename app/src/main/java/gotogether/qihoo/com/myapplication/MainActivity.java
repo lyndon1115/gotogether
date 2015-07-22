@@ -1,4 +1,4 @@
-//Lin testing bbbbbbbccc
+//Lin testing ddddd
 package gotogether.qihoo.com.myapplication;
 
 import android.app.Activity;
