@@ -1,7 +1,5 @@
 package gotogether.qihoo.com.myapplication;
-
 import android.util.Log;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -15,12 +13,19 @@ import java.net.URL;
  */
 public class HttpRequest {
 
-    private static final String baseUrl = "http://10.0.2.2:8123/?";
+    private  String baseURL ;
+    private String postParams;
+    private String result;
 
-    public String userInit(String userName, String address, String gender) throws IOException{
-        String requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
+    public HttpRequest(String baseURL, String postParams) {
+        this.baseURL = baseURL;
+        this.postParams = postParams;
+    }
 
-        String result = null;
+    public String fatchFromURL() throws IOException{
+       // String requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
+
+        String requestUrl = this.baseURL + this.postParams;
         HttpURLConnection connection = null;
         InputStreamReader in = null;
         try {

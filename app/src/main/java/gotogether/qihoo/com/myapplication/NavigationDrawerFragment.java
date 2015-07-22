@@ -21,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -82,7 +83,6 @@ public class NavigationDrawerFragment extends Fragment {
         // Select either the default item (0) or the last selected item.
         selectItem(mCurrentSelectedPosition);
 
-        new userInit().execute();
     }
 
     @Override
@@ -294,7 +294,9 @@ public class NavigationDrawerFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                String result = new HttpRequest().userInit("chenzhaocai", "qihu360", "male");
+                HttpRequest  httpReq = new HttpRequest("http://10.0.2.2:8123/?","type=1&username=chenzhaocai&address=qihu360&gender=male");
+                // this. requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
+                String result = httpReq.fatchFromURL();
                 Log.i("test", result);
                 Log.i("test", "user inti ok");
             } catch (IOException e) {
