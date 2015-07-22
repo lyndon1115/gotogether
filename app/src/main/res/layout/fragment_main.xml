@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/inputDataFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -63,13 +64,14 @@
 
         <TableRow>
             <TextView
+                android:id="@+id/DestinationExplan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/from_to"
                 android:gravity="center_horizontal"
                 android:padding="50px"/>
-            <EditText
+            <AutoCompleteTextView
                 android:id="@+id/Destination"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -77,6 +79,15 @@
                 android:text="@string/destination"
                 android:padding="50px"/>
         </TableRow>
+
+
+        <Button android:id="@+id/appointment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center_horizontal"
+            android:text="@string/appointment"
+            android:onClick="sendMessage" />
 
         <TableRow>
             <TextView
@@ -94,16 +105,6 @@
                 android:text="@string/time"
                 android:padding="50px"/>
         </TableRow>
-
-
-
-        <Button android:id="@+id/appointment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center_horizontal"
-            android:text="@string/appointment"
-            android:onClick="sendMessage" />
 
         <TextView
             android:layout_width="wrap_content"
