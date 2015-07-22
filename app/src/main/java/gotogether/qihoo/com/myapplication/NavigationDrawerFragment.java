@@ -95,6 +95,7 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
+                Toast.makeText(getActivity(), "onItemClick", Toast.LENGTH_SHORT).show();
             }
         });
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
@@ -192,12 +193,15 @@ public class NavigationDrawerFragment extends Fragment {
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
+            Toast.makeText(getActivity(), "Example action1.", Toast.LENGTH_SHORT).show();
         }
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
+            Toast.makeText(getActivity(), "Example action2.", Toast.LENGTH_SHORT).show();
         }
         if (mCallbacks != null) {
             mCallbacks.onNavigationDrawerItemSelected(position);
+            Toast.makeText(getActivity(), "Example action3.", Toast.LENGTH_SHORT).show();
         }
     }
 
