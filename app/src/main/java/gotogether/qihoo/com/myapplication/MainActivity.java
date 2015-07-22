@@ -1,4 +1,4 @@
-//add comment
+//Lin testing ddddd
 package gotogether.qihoo.com.myapplication;
 
 import android.app.Activity;
@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer. Push test.
+     * Fragment managing the behaviors, interactions and presentation of the navigation rawer. Lind
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
 

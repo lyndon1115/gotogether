@@ -1,5 +1,6 @@
 package gotogether.qihoo.com.myapplication;
 
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -11,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,6 +23,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.io.IOException;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -77,6 +81,8 @@ public class NavigationDrawerFragment extends Fragment {
 
         // Select either the default item (0) or the last selected item.
         selectItem(mCurrentSelectedPosition);
+
+        new userInit().execute();
     }
 
     @Override
@@ -95,6 +101,7 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
+                Toast.makeText(getActivity(), "onItemClick", Toast.LENGTH_SHORT).show();
             }
         });
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
@@ -192,12 +199,15 @@ public class NavigationDrawerFragment extends Fragment {
         mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
+            Toast.makeText(getActivity(), "Example action1.", Toast.LENGTH_SHORT).show();
         }
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
+            Toast.makeText(getActivity(), "Example action2.", Toast.LENGTH_SHORT).show();
         }
         if (mCallbacks != null) {
             mCallbacks.onNavigationDrawerItemSelected(position);
+            Toast.makeText(getActivity(), "Example action3.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -278,5 +288,19 @@ public class NavigationDrawerFragment extends Fragment {
          * Called when an item in the navigation drawer is selected.
          */
         void onNavigationDrawerItemSelected(int position);
+    }
+
+    private class userInit extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                String result = new HttpRequest().userInit("chenzhaocai", "qihu360", "male");
+                Log.i("test", result);
+                Log.i("test", "user inti ok");
+            } catch (IOException e) {
+                Log.e("test", "user init failed, ioexception");
+            }
+            return null;
+        }
     }
 }
