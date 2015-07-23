@@ -1,6 +1,7 @@
 package gotogether.qihoo.com.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -45,6 +46,10 @@ public class AddressActivity extends Activity {
                 for(String addName : strs) {
                     destinationSuggestion.add(addName);
                 }
+
+                Intent data = new Intent();
+                data.putExtra("inputAddress", s.toString());
+                setResult(RESULT_OK, data);
             }
         };
         mDestinationInput.addTextChangedListener(watcher);
