@@ -24,8 +24,6 @@ import java.util.Calendar;
 public class MainFragment extends Fragment{
     private Button mAppointment;
 
-    ArrayAdapter<String> destinationSuggestion;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,34 +42,7 @@ public class MainFragment extends Fragment{
     });
 
         //处理输入地址，智能提示
-        final AutoCompleteTextView mDestination = (AutoCompleteTextView)v.findViewById(R.id.Destination);
-        String[] books = new String[]{
-                "aaa",
-                "aaaa",
-                "ab"
-        };
-        destinationSuggestion = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, books);
-        TextWatcher watcher = new TextWatcher() {
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                String result = HttpRequest.getSuggestions(s.toString());
-                String[] strs = result.split(",");
-                destinationSuggestion.clear();
-                for(String addName : strs) {
-                    destinationSuggestion.add(addName);
-                }
-            }
-        };
-        mDestination.addTextChangedListener(watcher);
-        mDestination.setAdapter(destinationSuggestion);
+        //final AutoCompleteTextView
 
         //处理时间选择
         final TimePicker mSetTime = (TimePicker)v.findViewById(R.id.goTimePicker);

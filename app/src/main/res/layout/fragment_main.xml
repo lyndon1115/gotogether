@@ -71,14 +71,16 @@
                 android:text="@string/from_to"
                 android:gravity="center_horizontal"
                 android:padding="50px"/>
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/Destination"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:completionHint="@string/destination"
-                android:dropDownHorizontalOffset = "20dp"
-                android:completionThreshold="1"/>
+                android:text="请输入目的地"
+                android:padding="50px"
+                android:editable="false"
+                android:inputType="none|time"
+                android:clickable="true" />
         </TableRow>
 
 
@@ -98,17 +100,12 @@
                 android:text="@string/go_time"
                 android:gravity="center_horizontal"
                 android:padding="50px"/>
-            <TimePicker
-                android:id="@+id/goTimePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"/>
             <EditText
                 android:id="@+id/goTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="rtdrr"
+                android:text="请输入时间"
                 android:padding="50px"
                 android:editable="false"
                 android:inputType="none|time"
