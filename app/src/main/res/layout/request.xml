@@ -1,52 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TableRow>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         <TextView
             android:id="@+id/DestinationExplan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.2"
             android:text="@string/from_to"
             android:gravity="center_horizontal"
-            android:padding="50px"/>
+            android:padding="50px"
+
+            android:background="@drawable/shape_rec"
+            style="@style/textStyle"/>
         <EditText
             android:id="@+id/Destination"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="@string/destination"
-            android:padding="50px"/>
-    </TableRow>
+            android:padding="50px"
+            />
+    </LinearLayout>
 
 
-    <Button android:id="@+id/appointment"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:gravity="center_horizontal"
-        android:text="@string/appointment"
-        android:onClick="sendMessage"
-        android:background="@drawable/buttonyue"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:layout_marginTop="10dp"
-        />
+        android:orientation="horizontal">
 
-    <TableRow>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button android:id="@+id/appointment"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_weight="2"
+            android:text="@string/appointment"
+            android:textSize="60dp"
+            android:textColor="@color/white"
+
+
+            android:onClick="sendMessage"
+
+            android:background="@drawable/shape_circle"
+
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+
+             />
+
+    </RelativeLayout>
+
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.2"
             android:text="@string/go_time"
             android:gravity="center_horizontal"
-            android:padding="50px"/>
+            android:padding="50px"
+            android:background="@drawable/shape_rec"
+            style="@style/textStyle"/>
         <!--  <TimePicker
               android:id="@+id/goTimePicker"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_gravity="center_horizontal"/>-->
+
         <EditText
             android:id="@+id/goTime"
             android:layout_width="0dp"
@@ -57,6 +97,6 @@
             android:editable="false"
             android:inputType="none|time"
             android:clickable="true" />
-    </TableRow>
+    </LinearLayout>
 
-</TableLayout>
+</LinearLayout>
