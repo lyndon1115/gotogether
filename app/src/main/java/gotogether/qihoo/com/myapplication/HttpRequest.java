@@ -2,13 +2,19 @@ package gotogether.qihoo.com.myapplication;
 
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 /**
  * Created by czc on 2015/7/22.
@@ -17,13 +23,13 @@ public class HttpRequest {
 
     private static final String baseUrl = "http://10.0.2.2:8123/?";
 
-    public String userInit(String userName, String address, String gender) throws IOException{
+    public static String userInit(String userName, String address, String gender) throws IOException{
         String requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
 
         return readUrl(requestUrl);
     }
 
-    public String readUrl(String requestUrl) {
+    public static String readUrl(String requestUrl) {
         String result = null;
         HttpURLConnection connection = null;
         InputStreamReader in = null;
@@ -56,10 +62,26 @@ public class HttpRequest {
     }
 
     public static String getSuggestions(String input) {
-        String baiduUrl =  null;
-        String result =null ;
-
-        return result;
+        //input  = "qihu360";
+        String baiduUrl = "";
+        try {
+            baiduUrl =  "http://api.map.baidu.com/place/v2/suggestion?query=" + URLEncoder.encode(input,"utf-8") + "&region=131&output=json&ak=6wPZISS0ZkeO90nZshdBZxgD";
+        } catch (UnsupportedEncodingException e){
+            Log.e("getSuggestion", "encode error");
+        }
+        try {
+            JSONObject sugJson =  new JSONObject(readUrl(baiduUrl));
+            //JSONObject sugResult = sugJson.getJSONObject("result");
+            String result = "";
+            JSONArray sugList = sugJson.getJSONArray("result");
+            for(int i = 0; i < sugList.length(); ++i) {
+                result += sugList.getJSONObject(i).getString("name") + ",";
+            }
+            return result;
+        } catch (JSONException e){
+            Log.e("getSuggestions", "json null");
+        }
+        return null;
     }
 
     public static String bytes2HexString(byte[] b) {
