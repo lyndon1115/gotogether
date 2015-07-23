@@ -20,6 +20,10 @@ public class HttpRequest {
     public String userInit(String userName, String address, String gender) throws IOException{
         String requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
 
+        return readUrl(requestUrl);
+    }
+
+    public String readUrl(String requestUrl) {
         String result = null;
         HttpURLConnection connection = null;
         InputStreamReader in = null;
@@ -47,11 +51,14 @@ public class HttpRequest {
                     e.printStackTrace();
                 }
             }
-
         }
         return result;
     }
 
+    public static String getSuggestions(String input) {
+        String result = "beijing,shanghai";
+        return result;
+    }
 
     public static String bytes2HexString(byte[] b) {
         String ret = "";
