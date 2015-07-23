@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/title_achievement"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/orange" >
+
+        <ImageView
+            android:id="@+id/imageView_back1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/abs__ic_ab_back_holo_dark"
+            />
+        <TextView
+            android:id="@+id/textView_title_details"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0"
+            android:textSize="25sp"
+            android:paddingRight="2dp"
+            android:text="个人成就"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="130dp"
+            android:textColor="@color/white"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
