@@ -7,6 +7,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -49,12 +50,15 @@ public class MainFragment extends Fragment{
         //处理输入地址，智能提示
         mDestination = (EditText)v.findViewById(R.id.Destination);
         mDestination.setClickable(true);
-        mDestination.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d("mainFragment", "clickonmDestination");
+
+        mDestination.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                // TODO Auto-generated method stub
+                Log.d("Test", "This is onTouch,return false");
+                Toast.makeText(getActivity(), "mainFragment action3.touch mDestination", Toast.LENGTH_SHORT).show();
                 Intent addressIt = new Intent(getActivity(), AddressActivity.class);
-                startActivityForResult(addressIt,1);
+                startActivityForResult(addressIt, 1);
+                return false;
             }
         });
      /*   String[] books = new String[]{
