@@ -1,6 +1,8 @@
 package gotogether.qihoo.com.myapplication;
 
+import android.app.Dialog;
 import android.app.Fragment;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -26,6 +28,11 @@ import java.util.Calendar;
 public class MainFragment extends Fragment{
     private Button mAppointment;
     private  EditText  mDestination;
+    private  EditText  mTime;
+
+    private final int REQUEST_CODE_ADDRESS = 1;
+    private final int REQUEST_CODE_TIME = 2;
+
 
     ArrayAdapter<String> destinationSuggestion;
 
@@ -41,15 +48,16 @@ public class MainFragment extends Fragment{
         mAppointment = (Button)v.findViewById(R.id.appointment);
         mAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
-        public void onClick(View v) {
-            Log.d("mainFragment", "clickonYue");
+            public void onClick(View v) {
+                Log.d("mainFragment", "clickonYue");
                 Toast.makeText(getActivity(), "mainFragment action3.clickonYue", Toast.LENGTH_SHORT).show();
-        }
-    });
+            }
+        });
 
         //处理输入地址，智能提示
         mDestination = (EditText)v.findViewById(R.id.Destination);
-        mDestination.setClickable(true);
+       mDestination.setClickable(false);//防止点击同时激活onTouch和onClick
+        mDestination.setKeyListener(null);//禁止键盘弹出
 
         mDestination.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
@@ -57,54 +65,40 @@ public class MainFragment extends Fragment{
                 Log.d("Test", "This is onTouch,return false");
                 Toast.makeText(getActivity(), "mainFragment action3.touch mDestination", Toast.LENGTH_SHORT).show();
                 Intent addressIt = new Intent(getActivity(), AddressActivity.class);
-                startActivityForResult(addressIt, 1);
+                startActivityForResult(addressIt, REQUEST_CODE_ADDRESS);
                 return false;
             }
         });
-     /*   String[] books = new String[]{
-                "aaa",
-                "aaaa",
-                "ab"
-        };
-        destinationSuggestion = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_dropdown_item_1line, books);
-        TextWatcher watcher = new TextWatcher() {
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+        //获取时间
+        mTime = (EditText)v.findViewById(R.id.goTime);
+        mTime.setClickable(false);
+        mTime.setKeyListener(null);
+
+
+        mTime.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event) {
+                // TODO Auto-generated method stub
+                Log.d("Test", "This is onTouch,return false");
+                Toast.makeText(getActivity(), "mainFragment action3.touch mTime", Toast.LENGTH_SHORT).show();
+              //  Intent addressIt = new Intent(getActivity(), AddressActivity.class);
+               // startActivityForResult(addressIt, REQUEST_CODE_TIME);
+                Dialog dialogTime = new TimePickerDialog(getActivity(),
+                        new TimePickerDialog.OnTimeSetListener() {
+                            public void onTimeSet(TimePicker view, int hourOfDay,
+                                                  int minute) {
+                                mTime.setFocusable(false);
+                                mTime.setText("");
+                                mTime.setText(  hourOfDay + ":" + minute);
+                            }
+                        }, 20, 00, true);//默认时间的小时，分钟和24小时制
+                dialogTime.show();
+                return false;
             }
+        });
 
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
 
-            @Override
-            public void afterTextChanged(Editable s) {
-                String result = HttpRequest.getSuggestions(s.toString());
-                String[] strs = result.split(",");
-                destinationSuggestion.clear();
-                for(String addName : strs) {
-                    destinationSuggestion.add(addName);
-                }
-            }
-        };
-        mDestination.addTextChangedListener(watcher);
-        mDestination.setAdapter(destinationSuggestion);*/
-
-        //处理时间选择
-       /* final TimePicker mSetTime = (TimePicker)v.findViewById(R.id.goTimePicker);
-        Calendar mNowTime = Calendar.getInstance();
-        int hours = mNowTime.get(Calendar.HOUR);
-        int minutes = mNowTime.get(Calendar.MINUTE);
-        mSetTime.setIs24HourView(true);
-        mSetTime.setCurrentHour(hours);
-        mSetTime.setCurrentMinute(minutes);
-        mSetTime.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                int intentHour = hourOfDay;
-                int intentMinute = minute;
-
-            }
-        });*/
 
         return v;
     }
