@@ -38,10 +38,10 @@ public class MainFragment extends Fragment{
         mAppointment = (Button)v.findViewById(R.id.appointment);
         mAppointment.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Log.d("mainFragment", "clickonYue");
-            }
-        });
+        public void onClick(View v) {
+            Log.d("mainFragment", "clickonYue");
+        }
+    });
 
         //处理输入地址，智能提示
         final AutoCompleteTextView mDestination = (AutoCompleteTextView)v.findViewById(R.id.Destination);

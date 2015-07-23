@@ -294,10 +294,10 @@ public class NavigationDrawerFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... params) {
             try {
-                HttpRequest  httpReq = new HttpRequest("http://10.0.2.2:8123/?","type=1&username=chenzhaocai&address=qihu360&gender=male");
+                HttpRequest  httpReq = new HttpRequest();
                 // this. requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
-                String result = httpReq.fatchFromURL();
-                Log.i("test", result);
+                String result = httpReq.userInit("chenzhaocai", "qihu360", "male");
+                //Log.i("test", result);
                 Log.i("test", "user inti ok");
             } catch (IOException e) {
                 Log.e("test", "user init failed, ioexception");

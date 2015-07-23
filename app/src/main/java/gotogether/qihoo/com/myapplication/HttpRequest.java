@@ -56,7 +56,9 @@ public class HttpRequest {
     }
 
     public static String getSuggestions(String input) {
-        String result = "beijing,shanghai";
+        String baiduUrl = 
+        String result = ;
+
         return result;
     }
 
