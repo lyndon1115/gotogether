@@ -42,6 +42,12 @@ public class MainFragment extends Fragment{
     }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, parent, false);
 
@@ -65,10 +71,12 @@ public class MainFragment extends Fragment{
                 Log.d("Test", "This is onTouch,return false");
                 Toast.makeText(getActivity(), "mainFragment action3.touch mDestination", Toast.LENGTH_SHORT).show();
                 Intent addressIt = new Intent(getActivity(), AddressActivity.class);
+
                 startActivityForResult(addressIt, REQUEST_CODE_ADDRESS);
                 return false;
             }
         });
+
 
         //获取时间
         mTime = (EditText)v.findViewById(R.id.goTime);
