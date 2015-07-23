@@ -21,7 +21,7 @@ public class AddressActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
 
-        mDestinationInput = (AutoCompleteTextView)findViewById(R.id.Destination);
+        mDestinationInput = (AutoCompleteTextView)findViewById(R.id.DestinationInput);
         String[] books = new String[]{
                 "aaa",
                 "aaaa",
