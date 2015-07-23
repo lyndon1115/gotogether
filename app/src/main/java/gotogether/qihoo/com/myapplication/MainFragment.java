@@ -1,6 +1,7 @@
 package gotogether.qihoo.com.myapplication;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -23,6 +24,7 @@ import java.util.Calendar;
  */
 public class MainFragment extends Fragment{
     private Button mAppointment;
+    private  EditText  mDestination;
 
     ArrayAdapter<String> destinationSuggestion;
 
@@ -40,12 +42,22 @@ public class MainFragment extends Fragment{
             @Override
         public void onClick(View v) {
             Log.d("mainFragment", "clickonYue");
+                Toast.makeText(getActivity(), "mainFragment action3.clickonYue", Toast.LENGTH_SHORT).show();
         }
     });
 
         //处理输入地址，智能提示
-        final AutoCompleteTextView mDestination = (AutoCompleteTextView)v.findViewById(R.id.Destination);
-        String[] books = new String[]{
+        mDestination = (EditText)v.findViewById(R.id.Destination);
+        mDestination.setClickable(true);
+        mDestination.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("mainFragment", "clickonmDestination");
+                Intent addressIt = new Intent(getActivity(), AddressActivity.class);
+                startActivityForResult(addressIt,1);
+            }
+        });
+     /*   String[] books = new String[]{
                 "aaa",
                 "aaaa",
                 "ab"
@@ -71,10 +83,10 @@ public class MainFragment extends Fragment{
             }
         };
         mDestination.addTextChangedListener(watcher);
-        mDestination.setAdapter(destinationSuggestion);
+        mDestination.setAdapter(destinationSuggestion);*/
 
         //处理时间选择
-        final TimePicker mSetTime = (TimePicker)v.findViewById(R.id.goTimePicker);
+       /* final TimePicker mSetTime = (TimePicker)v.findViewById(R.id.goTimePicker);
         Calendar mNowTime = Calendar.getInstance();
         int hours = mNowTime.get(Calendar.HOUR);
         int minutes = mNowTime.get(Calendar.MINUTE);
@@ -88,7 +100,7 @@ public class MainFragment extends Fragment{
                 int intentMinute = minute;
 
             }
-        });
+        });*/
 
         return v;
     }

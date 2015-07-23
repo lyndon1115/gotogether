@@ -56,8 +56,8 @@ public class HttpRequest {
     }
 
     public static String getSuggestions(String input) {
-        String baiduUrl = 
-        String result = ;
+        String baiduUrl =  null;
+        String result =null ;
 
         return result;
     }
