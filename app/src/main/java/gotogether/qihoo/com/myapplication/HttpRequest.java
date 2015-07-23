@@ -2,10 +2,6 @@ package gotogether.qihoo.com.myapplication;
 
 import android.util.Log;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -21,13 +17,13 @@ public class HttpRequest {
 
     private static final String baseUrl = "http://10.0.2.2:8123/?";
 
-    public static String userInit(String userName, String address, String gender) throws IOException{
+    public String userInit(String userName, String address, String gender) throws IOException{
         String requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
 
         return readUrl(requestUrl);
     }
 
-    public static String readUrl(String requestUrl) {
+    public String readUrl(String requestUrl) {
         String result = null;
         HttpURLConnection connection = null;
         InputStreamReader in = null;
@@ -60,19 +56,9 @@ public class HttpRequest {
     }
 
     public static String getSuggestions(String input) {
-        String baiduUrl = "http://api.map.baidu.com/place/v2/suggestion?query=" + input + "&region=131&output=json&ak=6wPZISS0ZkeO90nZshdBZxgD";
-        String result = readUrl(baiduUrl);
-        try {
-            JSONObject sugObj = new JSONObject(result);
-            JSONArray sugList = sugObj.getJSONArray("result");
-            String retSugList = "";
-            for(int i = 0; i < sugList.length(); ++i) {
-                retSugList += sugList.getJSONObject(i).getString("name") + ",";
-            }
-            return retSugList;
-        } catch (JSONException e) {
-            Log.e("getSuggestion", "json decode error");
-        }
+        String baiduUrl =  null;
+        String result =null ;
+
         return result;
     }
 

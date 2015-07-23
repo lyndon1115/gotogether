@@ -76,11 +76,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="请输入目的地"
-                android:padding="50px"
-                android:editable="false"
-                android:inputType="none|time"
-                android:clickable="true" />
+                android:text="@string/destination"
+                android:padding="50px"/>
         </TableRow>
 
 
@@ -100,12 +97,17 @@
                 android:text="@string/go_time"
                 android:gravity="center_horizontal"
                 android:padding="50px"/>
+          <!--  <TimePicker
+                android:id="@+id/goTimePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"/>-->
             <EditText
                 android:id="@+id/goTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="请输入时间"
+                android:text="rtdrr"
                 android:padding="50px"
                 android:editable="false"
                 android:inputType="none|time"
