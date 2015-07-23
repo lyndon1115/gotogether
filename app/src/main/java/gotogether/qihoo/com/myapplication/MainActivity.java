@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
 
@@ -48,11 +49,12 @@ public class MainActivity extends ActionBarActivity
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
         FragmentManager fm = getFragmentManager();
-        Fragment dataInputFragment = getFragmentManager().findFragmentById(R.id.inputDataFragment);
+        MainFragment dataInputFragment = (MainFragment)getFragmentManager().findFragmentById(R.id.inputDataFragment);
         if(dataInputFragment == null) {
             dataInputFragment = new MainFragment();
             fm.beginTransaction().add(R.id.inputDataFragment, dataInputFragment).commit();
         }
+
     }
 
     @Override

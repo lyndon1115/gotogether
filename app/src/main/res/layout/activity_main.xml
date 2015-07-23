@@ -22,4 +22,10 @@
         android:name="gotogether.qihoo.com.myapplication.NavigationDrawerFragment"
         tools:layout="@layout/fragment_navigation_drawer" />
 
+    <fragment
+        android:id="@+id/inputDataFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="gotogether.qihoo.com.myapplication.MainFragment"
+        tools:layout="@layout/fragment_main" />
 </android.support.v4.widget.DrawerLayout>

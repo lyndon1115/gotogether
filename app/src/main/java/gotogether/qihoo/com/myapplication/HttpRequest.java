@@ -1,5 +1,7 @@
 package gotogether.qihoo.com.myapplication;
+
 import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -13,19 +15,16 @@ import java.net.URL;
  */
 public class HttpRequest {
 
-    private  String baseURL ;
-    private String postParams;
-    private String result;
+    private static final String baseUrl = "http://10.0.2.2:8123/?";
 
-    public HttpRequest(String baseURL, String postParams) {
-        this.baseURL = baseURL;
-        this.postParams = postParams;
+    public String userInit(String userName, String address, String gender) throws IOException{
+        String requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
+
+        return readUrl(requestUrl);
     }
 
-    public String fatchFromURL() throws IOException{
-       // String requestUrl = baseUrl + "type=1&" + "username=" + userName + "&address=" + address + "&gender=" + gender;
-
-        String requestUrl = this.baseURL + this.postParams;
+    public String readUrl(String requestUrl) {
+        String result = null;
         HttpURLConnection connection = null;
         InputStreamReader in = null;
         try {
@@ -52,11 +51,16 @@ public class HttpRequest {
                     e.printStackTrace();
                 }
             }
-
         }
         return result;
     }
 
+    public static String getSuggestions(String input) {
+        String baiduUrl = 
+        String result = ;
+
+        return result;
+    }
 
     public static String bytes2HexString(byte[] b) {
         String ret = "";
