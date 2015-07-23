@@ -108,8 +108,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="@string/time"
-                android:padding="50px"/>
+                android:text="rtdrr"
+                android:padding="50px"
+                android:editable="false"
+                android:inputType="none|time"
+                android:clickable="true" />
         </TableRow>
 
         <TextView
