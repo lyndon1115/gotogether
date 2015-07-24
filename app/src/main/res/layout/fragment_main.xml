@@ -15,29 +15,22 @@
 
 
         <include
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/include_request"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/include_weather"
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+
 
             layout="@layout/request"></include>
 
         -<include
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-
 
             android:id="@+id/include_recently_call"
-
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-
-
             android:layout_below="@id/include_request"
             layout="@layout/recently_call"
             ></include>
