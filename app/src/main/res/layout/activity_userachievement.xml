@@ -9,18 +9,31 @@
             android:id="@+id/include_title_achievement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            layout="@layout/title_achievement"/>
+            layout="@layout/title_achievement" />
 
         <include
-            android:layout_marginTop="20dp"
+
             android:id="@+id/include_detail_achievement"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/include_title_achievement"
             layout="@layout/detail_achievenment" />
 
-        <TextView
+
+
+        <Button
             android:layout_width="fill_parent"
-            android:layout_height="20dp" />
+            android:layout_height="35dp"
+            android:background="@drawable/shape_rec"
+
+            android:layout_below="@id/include_detail_achievement"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:padding="5dp"
+
+            android:text="分享至好友或朋友圈"
+            style="@style/textStyle"/>
+
 
 </RelativeLayout>

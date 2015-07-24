@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="性别："
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
+
             android:padding="15dp"
             style="@style/textStyle"
             android:textColor="@color/black"/>
@@ -37,7 +37,7 @@
             android:id="@+id/chooseSex"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+
             android:entries="@array/sex"/>
 
     </TableRow>
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="时间："
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
+
             android:padding="15dp"
             style="@style/textStyle"
             android:textColor="@color/black" />
@@ -60,7 +60,7 @@
             android:id="@+id/chooseTimeLow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+
             android:entries="@array/time"/>
 
 
@@ -69,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="~"
-            android:layout_marginTop="10dp"
+
             android:padding="20dp"
             style="@style/textStyle"
             android:textColor="@color/black"/>
@@ -78,7 +78,7 @@
             android:layout_weight="2.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+
             android:entries="@array/time"/>
 
         <TextView
@@ -86,7 +86,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="分"
-            android:layout_marginTop="5dp"
+
             android:padding="20dp"
             style="@style/textStyle"
             android:textColor="@color/black"/>
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:text="距离："
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
+
             android:padding="15dp"
             style="@style/textStyle"
             android:textColor="@color/black"/>
@@ -112,7 +112,7 @@
             android:id="@+id/chooseDistanceLow"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+
             android:entries="@array/distance"/>
 
 
@@ -121,7 +121,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="~"
-            android:layout_marginTop="5dp"
+
             android:padding="20dp"
             style="@style/textStyle"
             android:textColor="@color/black"/>
@@ -130,7 +130,7 @@
             android:layout_weight="2.5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+
             android:entries="@array/distance"/>
 
         <TextView
@@ -138,7 +138,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="米"
-            android:layout_marginTop="5dp"
+
             android:padding="20dp"
             style="@style/textStyle"
             android:textColor="@color/black"/>
