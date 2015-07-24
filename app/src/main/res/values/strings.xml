@@ -42,5 +42,8 @@
     <string name="title_activity_achievement">AchievementActivity</string>
     <string name="title_activity_setting">SettingActivity</string>
 
+    <string name="title_activity_choose_person">choose person</string>
+    <string name="title_activity_main_activity2">MainActivity2Activity</string>
+
 
 </resources>

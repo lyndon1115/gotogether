@@ -48,12 +48,12 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-       /* FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getFragmentManager();
         MainFragment dataInputFragment = (MainFragment)getFragmentManager().findFragmentById(R.id.inputDataFragment);
         if(dataInputFragment == null) {
             dataInputFragment = new MainFragment();
             fm.beginTransaction().add(R.id.inputDataFragment, dataInputFragment).commit();
-        }*/
+        }
 
     }
 
