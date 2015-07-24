@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_rec"
+
+    >
+
+    <TableRow
+        android:layout_weight="1"
+        android:gravity="center"
+
+
+
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+
+
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/textStyle"
+            android:textColor="@color/black"
+
+            android:text="约成次数"
+            />
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="360"
+            android:textColor="@color/background_floating_material_dark"
+            style="@style/textStyle"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="次"
+            style="@style/textStyle"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+    <TableRow
+
+        android:layout_weight="1"
+        android:gravity="center"
+
+
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="总里程"
+            style="@style/textStyle"
+            />
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1000"
+            android:textColor="@color/background_floating_material_dark"
+            style="@style/textStyle"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="千米"
+            android:textColor="@color/black"
+            style="@style/textStyle"/>
+    </TableRow>
+
+    <TableRow
+
+        android:layout_weight="1"
+        android:gravity="center"
+        style="@style/textStyle"
+
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="节省碳排放量"
+
+            android:textColor="@color/black"
+            style="@style/textStyle"
+            />
+        <TextView
+            android:id="@+id/discharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50"
+            android:textColor="@color/background_floating_material_dark"
+            style="@style/textStyle"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kg"
+            android:textColor="@color/black"
+            style="@style/textStyle"/>
+    </TableRow>
+
+    <TableRow
+
+        android:layout_weight="1"
+        android:gravity="center"
+        style="@style/textStyle"
+
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+
+            android:text="击败"
+            style="@style/textStyle"
+            />
+        <TextView
+            android:id="@+id/percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10%"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/background_floating_material_dark"
+            style="@style/textStyle"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="的用户"
+            android:textColor="@color/black"
+            style="@style/textStyle"/>
+
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"/>
+    </TableRow>
+
+
+
+
+</TableLayout>

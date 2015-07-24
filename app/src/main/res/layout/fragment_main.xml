@@ -1,18 +1,13 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
               android:id="@+id/inputDataFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
 
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    >
 
         <include
-            android:layout_marginTop="10dp"
+
             android:id="@+id/include_weather"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -21,27 +16,34 @@
 
 
         <include
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:id="@+id/include_request"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/include_weather"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
             layout="@layout/request"></include>
 
-        <include
-            android:layout_marginTop="10dp"
+        -<include
+            android:layout_marginTop="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
 
 
             android:id="@+id/include_recently_call"
+
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
+
+
             android:layout_below="@id/include_request"
             layout="@layout/recently_call"
             ></include>
 
     </RelativeLayout>
 
-</LinearLayout>
+
 

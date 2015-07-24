@@ -3,18 +3,36 @@
     android:id="@+id/DestinationInput"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
     <EditText
         android:id="@+id/DestinationInputText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="请输入回家地址"
-        android:selectAllOnFocus="true"/>
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+
+        android:text="请输入地址"
+        android:textSize="32dp"
+        android:selectAllOnFocus="true"
+        android:background="@drawable/shape_rec"
+        style="@style/textStyle"
+        android:padding="10dp"
+        />
 
     <ListView
         android:id="@+id/DestinationSuggestion"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/shape_rec"
+
+        android:layout_marginTop="10dp"
+        ></ListView>
+
+
 
 
 </LinearLayout>
