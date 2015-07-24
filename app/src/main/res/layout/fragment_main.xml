@@ -2,9 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
               android:id="@+id/inputDataFragment"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-
-    >
+    android:layout_height="fill_parent">
 
         <include
             android:id="@+id/include_weather"
@@ -29,6 +27,7 @@
             android:layout_marginTop="30dp"
 
             android:id="@+id/include_recently_call"
+
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:layout_below="@id/include_request"
