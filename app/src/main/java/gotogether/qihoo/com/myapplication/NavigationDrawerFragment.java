@@ -108,9 +108,20 @@ public class NavigationDrawerFragment extends Fragment {
                         startActivity(userInfoIntent);
                         break;
                     case 1:
+                       Intent achieveIntent = new Intent(getActivity(), AchievementActivity.class);
+                        startActivity(achieveIntent);
                         break;
                     case 2:
                         break;
+                    case 3:
+                        break;
+                    case 4:
+                        Intent settingsIntent = new Intent(getActivity(), SettingActivity.class);
+                        startActivity(settingsIntent);
+                        break;
+                    case 5:
+                        break;
+
 
                 }
             }

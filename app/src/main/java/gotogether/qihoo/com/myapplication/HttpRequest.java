@@ -29,6 +29,11 @@ public class HttpRequest {
         return readUrl(requestUrl);
     }
 
+    public static String postMatchInfo(String id, String destination, String time) {
+        String requestUrl = baseUrl + "type=6&" + "user_id=" + id + "&destination=" + destination + "&current_time=" + time;
+        return readUrl(requestUrl);
+    }
+
     public static String readUrl(String requestUrl) {
         String result = null;
         HttpURLConnection connection = null;
@@ -82,6 +87,36 @@ public class HttpRequest {
             Log.e("getSuggestions", "json null");
         }
         return null;
+    }
+
+    public static String getMatchList(String user_id, String current_time, String destination,
+                                      String user_name, String wait_time, String sex, String hope_sex, String distance_bias, String priority) {
+        if(user_name == null) {user_name = "";}
+        if(sex == null) {user_name = "";}
+        if(hope_sex == null) {hope_sex = "";}
+        //if(longitude == null) {longitude = "";}
+        //if(latitude == null) {latitude = "";}
+        if(current_time == null) {current_time = "";}
+        if(wait_time == null) {wait_time = "";}
+        if(distance_bias == null) {distance_bias = "";}
+        if(priority == null) {priority = "";}
+        String requestUrl = baseUrl + "type=2&user_id=" + user_id + "&user_name=" + user_name + "&sex=" + sex +
+                "&hope_sex=" + hope_sex + "&destination=" + destination + "&current_time=" + current_time
+                + "&wait_time=" + wait_time + "&distance_bias=" + distance_bias + "&priority=" + priority;
+        //{'user_id':2,'user_name':'henry','sex':'male','hope_sex':'male','longitude':130,'latitude':37,'current_time':7,'wait_time':5,'distance_bias':1  ,'priority':0x111,'isMatch':1}
+        String result = readUrl(requestUrl);
+
+        //暂时返回一个测试集合
+        result = "11,22,33,44,55";
+        return result;
+    }
+
+    public static String getPersonStatus(String id) {
+        //查询某人有没有被约
+        String result;
+        //todo
+        result = "ok";
+        return result;
     }
 
     public static String bytes2HexString(byte[] b) {

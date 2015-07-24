@@ -35,6 +35,10 @@
             android:name=".AchievementActivity"
             android:label="@string/title_activity_achievement" >
         </activity>
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
     </application>
 
 </manifest>

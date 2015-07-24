@@ -64,6 +64,8 @@ public class AddressActivity extends Activity {
                 Intent data = new Intent();
                 data.putExtra("destination", mSugData.get(position));
                 setResult(RESULT_OK, data);
+                finish();
+                //finish();
             }
         });
         //setupListViewAdapter();

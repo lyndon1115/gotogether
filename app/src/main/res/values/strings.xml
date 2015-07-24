@@ -40,6 +40,7 @@
     <string name="pref_user_sex">gotogether.qihoo.com.myapplication.preference_usersex</string>
     <string name="pref_user_address">gotogether.qihoo.com.myapplication.preference_useraddress</string>
     <string name="title_activity_achievement">AchievementActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
 
 
 </resources>
