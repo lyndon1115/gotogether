@@ -5,25 +5,32 @@
     <RelativeLayout
         android:id="@+id/title_achievement"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/orange" >
+        android:layout_height="60dp">
 
-        <ImageView
+        <Button
             android:id="@+id/imageView_back1"
             android:layout_width="40dp"
             android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/previous"
             />
+
         <TextView
-            android:id="@+id/textView_title_details"
+            android:id="@+id/textViewtitle"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="0"
-            android:textSize="25sp"
+
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+
+            style="@style/textStyle"
+            android:textSize="32dp"
             android:paddingRight="2dp"
-            android:text="个人成就"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="130dp"
-            android:textColor="@color/white"
+            android:text="title"
+
+
+
             />
 
     </RelativeLayout>
