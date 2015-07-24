@@ -1,4 +1,3 @@
-//Lin testing ddddd
 package gotogether.qihoo.com.myapplication;
 
 import android.app.Activity;
@@ -19,6 +18,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity
@@ -48,12 +48,12 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        FragmentManager fm = getFragmentManager();
+       /* FragmentManager fm = getFragmentManager();
         MainFragment dataInputFragment = (MainFragment)getFragmentManager().findFragmentById(R.id.inputDataFragment);
         if(dataInputFragment == null) {
             dataInputFragment = new MainFragment();
             fm.beginTransaction().add(R.id.inputDataFragment, dataInputFragment).commit();
-        }
+        }*/
 
     }
 
@@ -94,8 +94,8 @@ public class MainActivity extends ActionBarActivity
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-//            getMenuInflater().inflate(R.menu.main, menu);
-//            restoreActionBar();
+            getMenuInflater().inflate(R.menu.main, menu);
+            restoreActionBar();
             return true;
         }
         return super.onCreateOptionsMenu(menu);
@@ -107,7 +107,7 @@ public class MainActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        Toast.makeText(MainActivity.this, "MainActivity  item"+id, Toast.LENGTH_SHORT).show();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
