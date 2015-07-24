@@ -20,20 +20,36 @@
         layout="@layout/detail_achievenment" />
 
 
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_below="@id/include_detail_achievement"
+    android:background="@drawable/shape_rec">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/weichat"
+        android:layout_marginLeft="60dp"/>
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="35dp"
-        android:background="@drawable/shape_rec"
+
 
         android:layout_below="@id/include_detail_achievement"
         android:layout_marginTop="5dp"
-        android:layout_marginLeft="80dp"
+
         android:layout_marginRight="80dp"
         android:padding="5dp"
 
         android:text="分享至好友或朋友圈"
         style="@style/textStyle"/>
+
+</LinearLayout>
+
+
 
 
 </RelativeLayout>
