@@ -12,10 +12,6 @@ import android.widget.RadioGroup;
 
 public class InfoActivity extends ActionBarActivity {
 
-    private  static final String PREF_FILE =  "gotogether.qihoo.com.myapplication.preference_file";
-    private  static final String PREF_NAME =  "gotogether.qihoo.com.myapplication.preference_name";
-
-
     private SharedPreferencesUtils sharedpreferences = new SharedPreferencesUtils();
 
     private EditText mUserName;
@@ -41,7 +37,8 @@ public class InfoActivity extends ActionBarActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                sharedpreferences.setParam(InfoActivity.this, PREF_FILE, PREF_NAME,s.toString());
+                //save the user name locally, added by lin
+                sharedpreferences.setParam(InfoActivity.this,getString(R.string.pref_file), getString(R.string.pref_user_name) ,s.toString());
             }
         });
 
