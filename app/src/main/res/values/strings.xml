@@ -2,11 +2,11 @@
     <string name="app_name">My Application</string>
 
     <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
-    <string name="title_section4">Section 4</string>
-    <string name="title_section5">Section 5</string>
-    <string name="title_section6">Section 6</string>
+    <string name="title_section2">个人成就</string>
+    <string name="title_section3">邀请好友</string>
+    <string name="title_section4">拼车必读</string>
+    <string name="title_section5">设置</string>
+    <string name="title_section6">联系我们</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -37,6 +37,9 @@
     <!--the strings Lin added -->
     <string name="pref_user_name">gotogether.qihoo.com.myapplication.preference_username</string>
     <string name="pref_file">gotogether.qihoo.com.myapplication.preference_file</string>
+    <string name="pref_user_sex">gotogether.qihoo.com.myapplication.preference_usersex</string>
+    <string name="pref_user_address">gotogether.qihoo.com.myapplication.preference_useraddress</string>
+    <string name="title_activity_achievement">AchievementActivity</string>
 
 
 </resources>

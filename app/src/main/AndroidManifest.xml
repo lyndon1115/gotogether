@@ -31,6 +31,10 @@
             android:name=".InfoActivity"
             android:label="@string/title_activity_info" >
         </activity>
+        <activity
+            android:name=".AchievementActivity"
+            android:label="@string/title_activity_achievement" >
+        </activity>
     </application>
 
 </manifest>

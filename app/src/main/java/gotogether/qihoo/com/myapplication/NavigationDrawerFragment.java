@@ -99,6 +99,7 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
+                Toast.makeText(getActivity(), "item selected "+ position, Toast.LENGTH_SHORT).show();
                 switch (position)
                 {
                     case 0:
@@ -113,10 +114,13 @@ public class NavigationDrawerFragment extends Fragment {
 
                 }
             }
+
         });
 
         //get the username saved in local sotre, added by lin
         String userName = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_name),"");
+        if( userName == null ) userName = "«Î…Ë÷√–’√˚";
+        Toast.makeText(getActivity(), userName, Toast.LENGTH_SHORT).show();
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
@@ -124,8 +128,11 @@ public class NavigationDrawerFragment extends Fragment {
                 new String[]{
                         userName,
                        // getString(R.string.title_section2),
+                        getString(R.string.title_section2),
                         getString(R.string.title_section3),
-                        getString(R.string.title_section3)
+                        getString(R.string.title_section4),
+                        getString(R.string.title_section5),
+                        getString(R.string.title_section6),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
