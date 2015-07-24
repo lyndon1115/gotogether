@@ -5,150 +5,43 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TableLayout
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TableRow>
-            <TextView
-                android:id="@+id/weatherTemperature"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal"
-                android:text="温度"
 
-                style="@style/textStyle"
-
-                android:padding="25px"/>
-
-            <TextView
-                android:id="@+id/weatherLocation"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:text="地区"
-                android:padding="25px"/>
-
-            <TextView
-                android:id="@+id/weatherInfo"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:text="天气"
-                android:padding="25px"/>
-            <TextView
-                android:id="@+id/airValue"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:text="空气指数"
-                android:padding="25px"/>
-
-            <ImageView
-                android:id="@+id/imageViewWeather"
-                android:layout_width="60px"
-                android:layout_height="100px"
-                android:layout_weight="1"
-                android:layout_toRightOf="@+id/weather"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="0dp"
-                android:src="@drawable/sun"
-                />
-
-        </TableRow>
-
-
-        <View
-            android:layout_height="2px"
-            android:background="#FF909090"/>
-
-        <TableRow>
-            <TextView
-                android:id="@+id/DestinationExplan"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/from_to"
-                android:gravity="center_horizontal"
-                android:padding="50px"/>
-            <EditText
-                android:id="@+id/Destination"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="@string/destination"
-                android:padding="50px"/>
-        </TableRow>
-
-
-        <Button android:id="@+id/appointment"
-            android:layout_width="wrap_content"
+        <include
+            android:layout_marginTop="10dp"
+            android:id="@+id/include_weather"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center_horizontal"
-            android:text="@string/appointment"
-            android:onClick="sendMessage" />
+            android:layout_width="fill_parent"
+            layout="@layout/weather"></include>
 
-        <TableRow>
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/go_time"
-                android:gravity="center_horizontal"
-                android:padding="50px"/>
-          <!--  <TimePicker
-                android:id="@+id/goTimePicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"/>-->
-            <EditText
-                android:id="@+id/goTime"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="rtdrr"
-                android:padding="50px"
-                android:editable="false"
-                android:inputType="none|time"
-                android:clickable="true" />
-        </TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <include
+            android:layout_marginTop="10dp"
+            android:id="@+id/include_request"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="250dp"
-            android:text="@string/recently_call"
-            android:gravity="center_horizontal"
-            android:padding="50px"/>
+            android:layout_below="@id/include_weather"
+            layout="@layout/request"></include>
 
-        <TableRow>
-            <ImageView
-                android:id="@+id/imageView_RecentlyPortrait1"
-                android:layout_width="60px"
-                android:layout_height="100px"
-                android:layout_weight="1"
-                android:layout_marginLeft="1dp"
-                android:layout_marginTop="0dp"
-                android:src="@drawable/sun" />
-            <TextView
-                android:id="@+id/RecentlyCallInfo"
-                android:layout_width="60px"
-                android:layout_height="100px"
-                android:layout_weight="3"
-                android:text="约人的详细信息显示在这里"/>
+        <include
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
 
-            <Button android:id="@+id/Cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/Cancel"
-                android:onClick="sendMessage" />
 
-        </TableRow>
+            android:id="@+id/include_recently_call"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_below="@id/include_request"
+            layout="@layout/recently_call"
+            ></include>
 
-    </TableLayout>
-
+    </RelativeLayout>
 
 </LinearLayout>
 
