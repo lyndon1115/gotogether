@@ -1,5 +1,6 @@
 package gotogether.qihoo.com.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -11,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -45,6 +47,8 @@ public class NavigationDrawerFragment extends Fragment {
      */
     private NavigationDrawerCallbacks mCallbacks;
 
+
+    private SharedPreferencesUtils sharedpreferences = new SharedPreferencesUtils();
     /**
      * Helper component that ties the action bar to the navigation drawer.
      */
@@ -95,17 +99,51 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
+                Toast.makeText(getActivity(), "item selected "+ position, Toast.LENGTH_SHORT).show();
+                switch (position)
+                {
+                    case 0:
+                        Log.d("NavigationDrawer", "item 0 selected");
+                        Intent userInfoIntent = new Intent(getActivity(), InfoActivity.class);
+                        startActivity(userInfoIntent);
+                        break;
+                    case 1:
+                       Intent achieveIntent = new Intent(getActivity(), AchievementActivity.class);
+                        startActivity(achieveIntent);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        Intent settingsIntent = new Intent(getActivity(), SettingActivity.class);
+                        startActivity(settingsIntent);
+                        break;
+                    case 5:
+                        break;
+
+
+                }
             }
+
         });
+
+        //get the username saved in local sotre, added by lin
+        String userName = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_name),"");
+        if( userName == null ) userName = "«Î…Ë÷√–’√˚";
+        Toast.makeText(getActivity(), userName, Toast.LENGTH_SHORT).show();
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
                 new String[]{
-                        getString(R.string.title_section1),
+                        userName,
                        // getString(R.string.title_section2),
+                        getString(R.string.title_section2),
                         getString(R.string.title_section3),
-                        getString(R.string.title_section3)
+                        getString(R.string.title_section4),
+                        getString(R.string.title_section5),
+                        getString(R.string.title_section6),
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
@@ -249,10 +287,10 @@ public class NavigationDrawerFragment extends Fragment {
         }
 
         if (item.getItemId() == R.id.action_example) {
-            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "R.id.action_example", Toast.LENGTH_SHORT).show();
             return true;
         }
-
+        Toast.makeText(getActivity(), "onOptionsItemSelected.", Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
     }
 

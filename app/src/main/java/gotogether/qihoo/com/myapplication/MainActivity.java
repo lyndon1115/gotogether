@@ -48,12 +48,12 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-       /* FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getFragmentManager();
         MainFragment dataInputFragment = (MainFragment)getFragmentManager().findFragmentById(R.id.inputDataFragment);
         if(dataInputFragment == null) {
             dataInputFragment = new MainFragment();
             fm.beginTransaction().add(R.id.inputDataFragment, dataInputFragment).commit();
-        }*/
+        }
 
     }
 
@@ -107,7 +107,7 @@ public class MainActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        Toast.makeText(MainActivity.this, "MainActivity  item"+id, Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this, "MainActivity  itemd"+id, Toast.LENGTH_SHORT).show();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
