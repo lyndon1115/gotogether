@@ -62,7 +62,10 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
+    private  String mUserName;
+
     public NavigationDrawerFragment() {
+
     }
 
     @Override
@@ -73,6 +76,7 @@ public class NavigationDrawerFragment extends Fragment {
         // drawer. See PREF_USER_LEARNED_DRAWER for details.
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
         mUserLearnedDrawer = sp.getBoolean(PREF_USER_LEARNED_DRAWER, false);
+
 
         if (savedInstanceState != null) {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
@@ -93,19 +97,23 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //get username from local storage, added lin
+        mUserName = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_name),"");
+        if(mUserName == null) mUserName = getString(R.string.pref_user_name_default);
+
         mDrawerListView = (ListView) inflater.inflate(
                 R.layout.fragment_navigation_drawer, container, false);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
-                Toast.makeText(getActivity(), "item selected "+ position, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getActivity(), "item selected "+ position, Toast.LENGTH_SHORT).show();
                 switch (position)
                 {
                     case 0:
                         Log.d("NavigationDrawer", "item 0 selected");
                         Intent userInfoIntent = new Intent(getActivity(), InfoActivity.class);
-                        startActivity(userInfoIntent);
+                        startActivityForResult(userInfoIntent, 2);
                         break;
                     case 1:
                        Intent achieveIntent = new Intent(getActivity(), AchievementActivity.class);
@@ -114,6 +122,8 @@ public class NavigationDrawerFragment extends Fragment {
                     case 2:
                         break;
                     case 3:
+                        Intent readmeIntent = new Intent(getActivity(), ReadmeActivity.class);
+                        startActivity(readmeIntent);
                         break;
                     case 4:
                         Intent settingsIntent = new Intent(getActivity(), SettingActivity.class);
@@ -129,15 +139,14 @@ public class NavigationDrawerFragment extends Fragment {
         });
 
         //get the username saved in local sotre, added by lin
-        String userName = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_name),"");
-        if( userName == null ) userName = "«Î…Ë÷√–’√˚";
-        Toast.makeText(getActivity(), userName, Toast.LENGTH_SHORT).show();
+        if(mUserName == null) mUserName = getString(R.string.pref_user_name_default);
+        Toast.makeText(getActivity(), mUserName, Toast.LENGTH_SHORT).show();
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
                 new String[]{
-                        userName,
+                        mUserName,
                        // getString(R.string.title_section2),
                         getString(R.string.title_section2),
                         getString(R.string.title_section3),
@@ -145,7 +154,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_section5),
                         getString(R.string.title_section6),
                 }));
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+        mDrawerListView.setItemChecked(mCurrentSelectedPosition, false);
         return mDrawerListView;
     }
 
@@ -160,6 +169,9 @@ public class NavigationDrawerFragment extends Fragment {
      * @param drawerLayout The DrawerLayout containing this fragment's UI.
      */
     public void setUp(int fragmentId, DrawerLayout drawerLayout) {
+        mUserName = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_name),"");
+        if(mUserName == null) mUserName = getString(R.string.pref_user_name_default);
+
         mFragmentContainerView = getActivity().findViewById(fragmentId);
         mDrawerLayout = drawerLayout;
 
@@ -193,6 +205,24 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
+                Toast.makeText(getActivity(), "onDrawerOpened", Toast.LENGTH_SHORT).show();
+                //dynamically get the user name from the local storage and refresh the list view, added by Lin
+                mUserName = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_name),"");
+                if(mUserName == null) mUserName = getString(R.string.pref_user_name_default);
+                mDrawerListView.setAdapter(new ArrayAdapter<String>(
+                        getActionBar().getThemedContext(),
+                        android.R.layout.simple_list_item_activated_1,
+                        android.R.id.text1,
+                        new String[]{
+                                mUserName,
+                                // getString(R.string.title_section2),
+                                getString(R.string.title_section2),
+                                getString(R.string.title_section3),
+                                getString(R.string.title_section4),
+                                getString(R.string.title_section5),
+                                getString(R.string.title_section6),
+                        }));
+
                 if (!isAdded()) {
                     return;
                 }
@@ -286,10 +316,10 @@ public class NavigationDrawerFragment extends Fragment {
             return true;
         }
 
-        if (item.getItemId() == R.id.action_example) {
+      /*  if (item.getItemId() == R.id.action_example) {
             Toast.makeText(getActivity(), "R.id.action_example", Toast.LENGTH_SHORT).show();
             return true;
-        }
+        }*/
         Toast.makeText(getActivity(), "onOptionsItemSelected.", Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
     }

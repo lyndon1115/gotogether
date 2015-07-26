@@ -60,6 +60,10 @@
             android:name=".InfoActivity"
             android:label="@string/title_activity_info" >
         </activity>
+        <activity
+            android:name=".ReadmeActivity"
+            android:label="@string/title_activity_readme" >
+        </activity>
     </application>
 
 </manifest>

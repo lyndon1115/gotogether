@@ -5,29 +5,25 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
+    //private android.app.ActionBar mActionBar;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation rawer. Lind
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
+    private NavigationDrawerFragment mMainFragment;
 
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
@@ -37,6 +33,10 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        restoreActionBar();
+
+//        mActionBar =getActionBar();
+//        mActionBar.hide();
         setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -48,12 +48,13 @@ public class MainActivity extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        FragmentManager fm = getFragmentManager();
-        MainFragment dataInputFragment = (MainFragment)getFragmentManager().findFragmentById(R.id.inputDataFragment);
-        if(dataInputFragment == null) {
-            dataInputFragment = new MainFragment();
-            fm.beginTransaction().add(R.id.inputDataFragment, dataInputFragment).commit();
-        }
+            //下面的代码有问题，请对照来源调试
+            FragmentManager fm = getFragmentManager();
+            MainFragment dataInputFragment = (MainFragment) getFragmentManager().findFragmentById(R.id.inputDataFragment);
+            if (dataInputFragment == null) {
+                dataInputFragment = new MainFragment();
+                fm.beginTransaction().add(R.id.inputDataFragment, dataInputFragment).commit();
+            }
 
     }
 
@@ -83,7 +84,8 @@ public class MainActivity extends ActionBarActivity
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.hide();
+        actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setTitle(mTitle);
     }
 
@@ -96,6 +98,7 @@ public class MainActivity extends ActionBarActivity
             // decide what to show in the action bar.
             getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();
+
             return true;
         }
         return super.onCreateOptionsMenu(menu);
@@ -109,9 +112,9 @@ public class MainActivity extends ActionBarActivity
         int id = item.getItemId();
         Toast.makeText(MainActivity.this, "MainActivity  itemd"+id, Toast.LENGTH_SHORT).show();
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+       /* if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }

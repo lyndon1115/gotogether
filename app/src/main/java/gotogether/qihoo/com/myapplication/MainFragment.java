@@ -33,16 +33,22 @@ public class MainFragment extends Fragment{
     private Button mAppointment;
     private TextView  mDestination;
     private  TextView  mTime;
+    private String  mNowTime;
 
     private final int REQUEST_CODE_ADDRESS = 1;
-    private final int REQUEST_CODE_TIME = 2;
+    private final int REQUEST_USERINFO = 2;
 
+    private SharedPreferencesUtils sharedpreferences = new SharedPreferencesUtils();
 
     ArrayAdapter<String> destinationSuggestion;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Toast.makeText(getActivity(), "onCreate ", Toast.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
+        SimpleDateFormat    formatter    =   new    SimpleDateFormat    ("HH:mm");
+        Date    curDate    =   new    Date(System.currentTimeMillis());//
+        mNowTime    =    formatter.format(curDate);
     }
 
     @Override
@@ -52,18 +58,29 @@ public class MainFragment extends Fragment{
         //    Toast.makeText(getActivity(), "请输入地址和时间", Toast.LENGTH_SHORT).show();
         //} else {
         //}
-        switch (resultCode) {
-            case -1:
-                mDestination.setText("");
-                mDestination.setText(data.getStringExtra("destination"));
-                break;
-            default:
-                break;
-        }
+        Toast.makeText(getActivity(), "REQUEST_CODE"+requestCode, Toast.LENGTH_SHORT).show();
+       // if (requestCode == REQUEST_CODE_ADDRESS)
+            switch (resultCode) {
+                case -1:
+                    mDestination.setText("");
+                    mDestination.setText(data.getStringExtra("destination"));
+                    break;
+                default:
+                    break;
+            }
+    /*    else if (requestCode == REQUEST_USERINFO)
+        {
+            Toast.makeText(getActivity(), "REQUEST_USERINFO", Toast.LENGTH_SHORT).show();
+            String defaultAddress = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_address),"");
+             if(defaultAddress !=null )
+                    mDestination.setText(defaultAddress);
+         }*/
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
+        sharedpreferences.setParam(getActivity(), getString(R.string.pref_file), getString(R.string.mainfragment_initial_flag), "1");
+        Toast.makeText(getActivity(), "onCreateView ", Toast.LENGTH_SHORT).show();
         View v = inflater.inflate(R.layout.fragment_main, parent, false);
 
         mAppointment = (Button)v.findViewById(R.id.appointment);
@@ -93,6 +110,8 @@ public class MainFragment extends Fragment{
         mDestination.setClickable(false);//
         mDestination.setKeyListener(null);//
 
+       String defaultAddress = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_address),"");
+       if(defaultAddress !=null && mDestination.getText().toString()==getString(R.string.destination))  mDestination.setText(defaultAddress);
         mDestination.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
                 // TODO Auto-generated method stub
@@ -105,9 +124,11 @@ public class MainFragment extends Fragment{
             }
         });
 
-
-        //
+        //set now time, Lin
         mTime = (TextView)v.findViewById(R.id.goTime);
+
+        if(mNowTime != null)
+            mTime.setText(mNowTime.toString());
         mTime.setClickable(false);
         mTime.setKeyListener(null);
 
@@ -118,8 +139,7 @@ public class MainFragment extends Fragment{
                 //Toast.makeText(getActivity(), "mainFragment action3.touch mTime", Toast.LENGTH_SHORT).show();
                 //  Intent addressIt = new Intent(getActivity(), AddressActivity.class);
                 // startActivityForResult(addressIt, REQUEST_CODE_TIME);
-                final SimpleDateFormat formmater = new SimpleDateFormat("yyyy-MM-dd"
-                        "  HH-mm-ss");
+                final SimpleDateFormat formmater = new SimpleDateFormat("HH:mm");
                 Dialog dialogTime = new TimePickerDialog(getActivity(),
                         new TimePickerDialog.OnTimeSetListener() {
                             public void onTimeSet(TimePicker view, int hourOfDay,
@@ -142,8 +162,6 @@ public class MainFragment extends Fragment{
         return v;
     }
 
-
-
     private class postMatchInfo extends AsyncTask<Void, Void, Boolean> {
         //向服务器注册匹配信息
         @Override
@@ -165,4 +183,82 @@ public class MainFragment extends Fragment{
             Log.e("postMatchInfo", "user init ok");
         }
     }
+
+  /*  @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Toast.makeText(getActivity(), "onActivityCreated "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Toast.makeText(getActivity(), "onDestroyView "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getActivity(), "onDestroy "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Toast.makeText(getActivity(), "onStop "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Toast.makeText(getActivity(), "onDetach "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Toast.makeText(getActivity(), "onPause "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Toast.makeText(getActivity(), "onStart "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Toast.makeText(getActivity(), "onStart "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Toast.makeText(getActivity(), "onSaveInstanceState "+mTime.getText().toString(), Toast.LENGTH_SHORT).show();
+    }
+*/
+    /*  @Override
+    public void onStart() {
+        super.onStart();
+        Toast.makeText(getActivity(), "onStart", Toast.LENGTH_SHORT).show();
+        String initialFlag = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.mainfragment_initial_flag),"");
+        if(initialFlag.equals("1")) return;
+
+        String statusAddress = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.mainfragment_destination),"");
+        if(statusAddress !=null )
+            mDestination.setText(statusAddress);
+        String statusTime = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.mainfragment_time),"");
+        if(statusTime !=null )
+            mTime.setText(statusTime);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Toast.makeText(getActivity(), "onStop", Toast.LENGTH_SHORT).show();
+        sharedpreferences.setParam(getActivity(), getString(R.string.pref_file), getString(R.string.mainfragment_initial_flag), "0");
+        sharedpreferences.setParam(getActivity(), getString(R.string.pref_file), getString(R.string.mainfragment_time), mTime.getText());
+        sharedpreferences.setParam(getActivity(), getString(R.string.pref_file), getString(R.string.mainfragment_destination), mDestination.getText());
+    }*/
 }

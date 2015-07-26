@@ -9,20 +9,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-
-public class AchievementActivity extends ActionBarActivity {
+public class ReadmeActivity  extends ActionBarActivity {
 
     private Button mBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_achievement);
+        setContentView(R.layout.activity_readme);
         restoreActionBar();
         mBack = (Button) findViewById(R.id.imageView_back1);
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AchievementActivity.this, "SettingActivity mBack", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ReadmeActivity.this, "SettingActivity mBack", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

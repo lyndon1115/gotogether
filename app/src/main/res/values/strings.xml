@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
 
-    <string name="title_section1">Section 1</string>
+    <string name="title_section1">约车回家</string>
     <string name="title_section2">个人成就</string>
     <string name="title_section3">邀请好友</string>
     <string name="title_section4">拼车必读</string>
@@ -36,14 +36,22 @@
 
     <!--the strings Lin added -->
     <string name="pref_user_name">gotogether.qihoo.com.myapplication.preference_username</string>
+    <string name="pref_user_name_default">请设置用户名</string>
     <string name="pref_file">gotogether.qihoo.com.myapplication.preference_file</string>
     <string name="pref_user_sex">gotogether.qihoo.com.myapplication.preference_usersex</string>
     <string name="pref_user_address">gotogether.qihoo.com.myapplication.preference_useraddress</string>
     <string name="title_activity_achievement">AchievementActivity</string>
     <string name="title_activity_setting">SettingActivity</string>
+    <string name="save_info">保存</string>
 
     <string name="title_activity_choose_person">choose person</string>
     <string name="title_activity_main_activity2">MainActivity2Activity</string>
+
+    <string name="mainfragment_time">gotogether.qihoo.com.myapplication.mainfragment_time</string>
+    <string name="mainfragment_destination">gotogether.qihoo.com.myapplication.mainfragment_destination</string>
+    <string name="mainfragment_initial_flag">gotogether.qihoo.com.myapplication.mainfragment_initial_flag</string>
+    <string name="title_activity_readme">ReadmeActivity</string>
+
 
 
 </resources>
