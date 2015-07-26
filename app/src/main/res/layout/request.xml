@@ -7,30 +7,78 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/shape_rec">
+        android:orientation="vertical"
+        android:background="@drawable/shape_rec"
+        >
 
-        <TextView
-            android:id="@+id/DestinationExplan"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            android:text="@string/from_to"
-            android:gravity="center_horizontal"
-            android:padding="50px"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:id="@+id/DestinationExplan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:text="@string/from_to"
+                android:gravity="center_horizontal"
+                android:padding="50px"
 
 
-            style="@style/textStyle"/>
-        <TextView
-            android:id="@+id/Destination"
-            android:layout_width="0dp"
+                style="@style/textStyle"/>
+            <EditText
+                android:id="@+id/Destination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/destination"
+                android:textColor="@color/background_floating_material_dark"
+                android:padding="50px"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/destination"
-            android:padding="50px"
-            />
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:text="@string/go_time"
+                android:gravity="center_horizontal"
+                android:padding="50px"
+
+                style="@style/textStyle"/>
+            <!--  <TimePicker
+                  android:id="@+id/goTimePicker"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center_horizontal"/>-->
+
+            <EditText
+                android:id="@+id/goTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/background_floating_material_dark"
+                android:layout_weight="2"
+                android:text="rtdrr"
+                android:padding="50px"
+                android:editable="false"
+                android:inputType="none|time"
+                android:clickable="true" />
+        </LinearLayout>
+
     </LinearLayout>
+
+
+
 
 
     <LinearLayout
@@ -70,37 +118,6 @@
 
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/shape_rec">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            android:text="@string/go_time"
-            android:gravity="center_horizontal"
-            android:padding="50px"
 
-            style="@style/textStyle"/>
-        <!--  <TimePicker
-              android:id="@+id/goTimePicker"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_gravity="center_horizontal"/>-->
-
-        <TextView
-            android:id="@+id/goTime"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="rtdrr"
-            android:padding="50px"
-            android:editable="false"
-            android:inputType="none|time"
-            android:clickable="true" />
-    </LinearLayout>
 
 </LinearLayout>
