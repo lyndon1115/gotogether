@@ -15,7 +15,7 @@
             android:id="@+id/back_address"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/back"
+
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             />
@@ -41,7 +41,7 @@
             android:id="@+id/search_address"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/search"
+
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
