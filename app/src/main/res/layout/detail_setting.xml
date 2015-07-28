@@ -8,13 +8,16 @@
     <TableRow>
 
         <TextView
+            android:layout_marginTop="2dp"
             style="@style/SettingStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="开启通知"
 
+
             />
         <CheckBox
+            android:layout_marginTop="2dp"
             style="@style/MyCheckBox"
 
             android:layout_width="wrap_content"
@@ -54,6 +57,7 @@
             android:text="清理缓存"
             style="@style/textStyle"
             android:layout_marginRight="100dp"
+            android:background="@color/white"
             />
     </TableRow>
 
@@ -64,6 +68,7 @@
             android:text="关于"
             style="@style/textStyle"
             android:layout_marginRight="100dp"
+            android:background="@color/white"
             />
     </TableRow>
 

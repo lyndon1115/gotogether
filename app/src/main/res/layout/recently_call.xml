@@ -31,7 +31,7 @@
 
 
 
-            android:src="@drawable/sun"/>
+            android:src="@drawable/portrail"/>
         <TextView
             android:id="@+id/RecentlyCallInfo"
             android:layout_width="50dp"
@@ -60,7 +60,7 @@
             android:text="@string/Cancel"
             style="@style/textStyle"
             android:onClick="sendMessage"
-            android:background="@color/transparent_background"/>
+            android:background="@drawable/shape_rec"/>
 
     </TableRow>
     <TableRow>

@@ -23,7 +23,7 @@ public class SettingActivity extends ActionBarActivity {
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SettingActivity.this, "SettingActivity mBack", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(SettingActivity.this, "SettingActivity mBack", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

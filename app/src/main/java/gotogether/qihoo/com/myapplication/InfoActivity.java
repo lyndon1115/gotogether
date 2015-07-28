@@ -101,7 +101,7 @@ public class InfoActivity extends ActionBarActivity {
                 //±£¥Ê–’√˚
                 sharedpreferences.setParam(InfoActivity.this, getString(R.string.pref_file), getString(R.string.pref_user_name), mUserName.getText().toString());
 
-                Toast.makeText(InfoActivity.this, "User info saved!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(InfoActivity.this, "User info saved!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -125,7 +125,6 @@ public class InfoActivity extends ActionBarActivity {
             default:
                 break;
         }
-
     }
 
     @Override

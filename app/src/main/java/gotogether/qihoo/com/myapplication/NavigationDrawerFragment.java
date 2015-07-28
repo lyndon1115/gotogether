@@ -140,7 +140,7 @@ public class NavigationDrawerFragment extends Fragment {
 
         //get the username saved in local sotre, added by lin
         if(mUserName == null) mUserName = getString(R.string.pref_user_name_default);
-        Toast.makeText(getActivity(), mUserName, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), mUserName, Toast.LENGTH_SHORT).show();
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
@@ -205,7 +205,7 @@ public class NavigationDrawerFragment extends Fragment {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                Toast.makeText(getActivity(), "onDrawerOpened", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), "onDrawerOpened", Toast.LENGTH_SHORT).show();
                 //dynamically get the user name from the local storage and refresh the list view, added by Lin
                 mUserName = (String)sharedpreferences.getParam(getActivity(), getString(R.string.pref_file),getString(R.string.pref_user_name),"");
                 if(mUserName == null) mUserName = getString(R.string.pref_user_name_default);
@@ -320,7 +320,7 @@ public class NavigationDrawerFragment extends Fragment {
             Toast.makeText(getActivity(), "R.id.action_example", Toast.LENGTH_SHORT).show();
             return true;
         }*/
-        Toast.makeText(getActivity(), "onOptionsItemSelected.", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), "onOptionsItemSelected.", Toast.LENGTH_SHORT).show();
         return super.onOptionsItemSelected(item);
     }
 

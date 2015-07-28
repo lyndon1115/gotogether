@@ -17,37 +17,44 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/include_title_achievement"
-        layout="@layout/detail_achievenment" />
+        layout="@layout/detail_achievenment"
+        />
 
 
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_below="@id/include_detail_achievement"
-    android:background="@drawable/shape_rec">
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-
-        android:layout_marginLeft="60dp"/>
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="35dp"
-
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_below="@id/include_detail_achievement"
-        android:layout_marginTop="5dp"
+        android:background="@drawable/shape_rec"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="10dp">
 
-        android:layout_marginRight="80dp"
-        android:padding="5dp"
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/share"
 
-        android:text="分享至好友或朋友圈"
-        style="@style/textStyle"/>
+            android:layout_marginTop="7dp"
+            android:padding="5dp" />
 
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+
+
+            android:layout_below="@id/include_detail_achievement"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/white"
+
+            android:padding="5dp"
+
+            android:text="分享"
+            style="@style/textStyle"/>
+
+    </LinearLayout>
 
 
 

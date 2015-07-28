@@ -4,22 +4,22 @@
     android:layout_height="match_parent"
     >
     <include
-        android:id="@+id/include_title_mysetting"
+        android:id="@+id/include_title_readme"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        layout="@layout/title_achievement"/>
+        layout="@layout/title_readme"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_below="@+id/include_title_mysetting"
+        android:layout_below="@id/include_title_readme"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="45dp"
-        android:layout_marginStart="45dp"
-        android:text="Readme TextView"
-        android:textSize="30dp" />
+
+
+        android:text="为什么选择“一起走吧”：\n晚上独自回家心里很不放心，晚高峰打车无望，公交拥挤，地铁涨价。\n多一个合适的人在身边总能多一份希望。\n“一起走吧”为您提供最靠谱的公司同事一道顺路回家，省钱更省心。"
+        android:textSize="20dp" />
 
 
 </RelativeLayout>

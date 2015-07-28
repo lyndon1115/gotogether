@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">一起回家</string>
 
     <string name="title_section1">约车回家</string>
     <string name="title_section2">个人成就</string>
@@ -24,7 +24,7 @@
     <string name="destination">请输入目的地</string>
     <string name="go_time">出发时间：</string>
     <string name="time">请输入出发时间</string>
-    <string name="recently_call">最近约</string>
+    <string name="recently_call">正在约</string>
     <string name="Cancel">取消</string>
 
     <string name="addressPrompt">请选择地址</string>
@@ -53,5 +53,36 @@
     <string name="title_activity_readme">ReadmeActivity</string>
 
 
+    <!--czc-->
+    <string name="pull_to_refresh">下拉可以刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新…</string>
+    <string name="not_updated_yet">暂未更新过</string>
+    <string name="updated_at">上次更新于%s前</string>
+    <string name="updated_just_now">刚刚更新</string>
+    <string name="time_error">时间有问题</string>
+
+    <string name="lastestyue">您刚约了</string>
+    <string name="lastestyuedefault">暂时还没约到- -</string>
+    <string name="yuepaochenggong">对方接受了您的请求~</string>
+    <string name="gongxi">嘿嘿</string>
+    <string name="yuepaoshibai">T_T失败了~</string>
+    <string name="yuepaoshibaiyuanyin">她已经有人约了...</string>
+    <string name="dengdaiduifang">向服务器请求中...</string>
+    <string name="dengdaiduifangxiaoxi">请稍等~</string>
+    <string name="duifangquxiao">对方可能有事，您可以换一个</string>
+    <string name="duifangquxiaoxiaoxi">嘿嘿</string>
+    <string name="yourenyuenile">O(∩_∩)O有人约你啦！</string>
+    <string name="yourenyuenilexiaoxi">要接受邀请吗~</string>
+    <string name="jieshou">接受</string>
+    <string name="jujue">拒绝</string>
+    <string name="shi">时</string>
+    <string name="fen">分</string>
+    <string name="niming">匿名去</string>
+    <string name="shijian">于时间</string>
+    <string name="yu">于</string>
+    <string name="chenxiansheng">陈先生</string>
+    <string name="hunvshi">胡女士</string>
+    <string name="linxianshang">林先生</string>
 
 </resources>

@@ -22,7 +22,7 @@ public class AchievementActivity extends ActionBarActivity {
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AchievementActivity.this, "SettingActivity mBack", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(AchievementActivity.this, "SettingActivity mBack", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });

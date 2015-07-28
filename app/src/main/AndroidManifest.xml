@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- add by czc -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -28,7 +29,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <!--
@@ -42,11 +42,14 @@
             android:label="@string/title_activity_choose_person" >
         </activity>
 
-        <!-- czc添加service -->
+        <!--czc添加service-->
         <service
             android:name=".GetSeflStatusService"
             android:exported="false" >
         </service>
+        <receiver android:name=".ChoosePersonActivity$SelfStatusReceiver"
+            >
+        </receiver>
 
         <activity
             android:name=".AchievementActivity"

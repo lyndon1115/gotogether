@@ -5,10 +5,10 @@
     android:layout_height="fill_parent">
 
         <include
-            android:id="@+id/include_weather"
+            android:id="@+id/include_title_main"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-            layout="@layout/weather"></include>
+            layout="@layout/title_main"></include>
 
 
 
@@ -17,10 +17,7 @@
             android:id="@+id/include_request"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/include_weather"
-
-
-
+            android:layout_below="@id/include_title_main"
             layout="@layout/request"></include>
 
         -<include

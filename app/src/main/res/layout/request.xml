@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/background_floating_material_dark"
                 android:layout_weight="2"
-                android:text="rtdrr"
+                android:text="2015-07-28-15-30-00"
                 android:padding="50px"
                 android:editable="false"
                 android:inputType="none|time"
@@ -86,37 +86,37 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
-        <Button android:id="@+id/appointment"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_weight="2"
-            android:text="@string/appointment"
-            android:textSize="60dp"
-            android:textColor="@color/white"
-
-
-            android:onClick="sendMessage"
-
-            android:background="@drawable/shape_circle"
+            <Button android:id="@+id/appointment"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="2"
+                android:text="@string/appointment"
+                android:textSize="60dp"
+                android:textColor="@color/white"
 
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+                android:onClick="sendMessage"
 
-             />
-
-    </RelativeLayout>
+                android:background="@drawable/shape_circle"
 
 
-        </LinearLayout>
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 
 

@@ -61,10 +61,10 @@ public class MainActivity extends ActionBarActivity
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-       /* FragmentManager fragmentManager = getFragmentManager();
+       FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();*/
+                .commit();
     }
 
     public void onSectionAttached(int number) {
@@ -110,7 +110,7 @@ public class MainActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        Toast.makeText(MainActivity.this, "MainActivity  itemd"+id, Toast.LENGTH_SHORT).show();
+        //.makeText(MainActivity.this, "MainActivity  itemd"+id, Toast.LENGTH_SHORT).show();
         //noinspection SimplifiableIfStatement
        /* if (id == R.id.action_settings) {
             return true;

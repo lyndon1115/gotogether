@@ -8,11 +8,8 @@
 
     android:useLevel= "false">
 
-    <solid android:color="#80065e8d"/>
-    <stroke
-        android:dashGap="0dp"
-        android:width="4dp"
-        android:color="@android:color/white"/>
+    <solid android:color="#23ac38"/>
+
 
     <size android:width= "20dp"
 

@@ -26,10 +26,10 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:layout_marginRight="100dp"
+            android:layout_marginRight="80dp"
             android:layout_marginTop="5dp"
             android:padding="10dp"
-            android:text="姓名"
+            android:text=""
             style="@style/textStyle"/>
 
     </TableRow>
@@ -93,22 +93,16 @@
             android:layout_marginRight="80dp"
             android:layout_marginTop="5dp"
             android:padding="10dp"
-            android:text="电子城小区"
+            android:text=""
             style="@style/textStyle"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/save_info"
-            android:id="@+id/button_save_info" />
+
 
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </TableRow>
+        android:layout_height="match_parent"></TableRow>
 
     <TableRow
         android:layout_width="match_parent"
@@ -119,6 +113,7 @@
         android:layout_height="match_parent">
 
     </TableRow>
+
 
 
 </TableLayout>

@@ -63,7 +63,7 @@ public class AddressActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent data = new Intent();
                 data.putExtra("destination", mSugData.get(position));
-                setResult(RESULT_OK, data);
+                setResult(2, data);
                 finish();
                 //finish();
             }

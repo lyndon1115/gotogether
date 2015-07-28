@@ -22,8 +22,8 @@
 
             style="@style/textStyle"
             android:textColor="@color/black"
-
-            android:text="约成次数"
+            android:layout_gravity="center"
+            android:text="约成10次"
             />
 
     </TableRow>
@@ -43,7 +43,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="总里程"
+            android:text="总里程30km"
+            android:layout_gravity="center"
             style="@style/textStyle"
             />
 
@@ -64,7 +65,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="节省碳排放量"
+            android:text="节省碳排放量5kg"
+            android:layout_gravity="center"
 
             android:textColor="@color/black"
             style="@style/textStyle"
@@ -88,7 +90,8 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
 
-            android:text="击败"
+            android:text="击败90%"
+            android:layout_gravity="center"
             style="@style/textStyle"
             />
 
